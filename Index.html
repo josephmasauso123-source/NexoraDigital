@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora Digital | Building Your Future Online</title>
+
+    <meta name="description"
+    content="Nexora Digital creates modern, mobile-friendly websites for businesses and individuals.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b10;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            border-bottom: 1px solid #24212d;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #a970ff;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 7%;
+        }
+
+        .badge {
+            color: #c5a3ff;
+            background: #211532;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #a970ff;
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #b9b7c4;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #8b45ed;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #65517f;
+            color: white;
+        }
+
+        .services {
+            padding: 60px 7%;
+            background: #111117;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-text {
+            color: #b9b7c4;
+            margin-bottom: 35px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: #191820;
+            border: 1px solid #30283c;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .card h3 {
+            color: #bd91ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #c0beca;
+            font-size: 14px;
+        }
+
+        .contact {
+            padding: 65px 7%;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #b9b7c4;
+            margin: 15px 0 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #24212d;
+            color: #9693a2;
+            font-size: 13px;
+        }
+
+        @media (min-width: 650px) {
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero {
+                min-height: 85vh;
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .hero {
+                animation: appear 0.8s ease-out;
+            }
+
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                    transform: translateY(12px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+      .portfolio {
+    padding: 60px 7%;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.portfolio-card {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #191820;
+    border: 1px solid #30283c;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.portfolio-image {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #211532, #7135b8);
+    border-radius: 8px;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.portfolio-card h3 {
+    color: #bd91ff;
+    margin-bottom: 10px;
+}
+
+.portfolio-card p {
+    color: #c0beca;
+    font-size: 14px;
+    margin-bottom: 20px;
+      }
+      .pricing {
+    padding: 60px 7%;
+    background: #111117;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1050px;
+    margin: 35px auto;
+}
+
+.price-card {
+    background: #191820;
+    border: 1px solid #30283c;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+}
+
+.price-card h3 {
+    color: #bd91ff;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+.price-card p:not(.price) {
+    color: #c0beca;
+    font-size: 14px;
+}
+
+.price-card ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    color: #d8d5e0;
+}
+
+.price-card li {
+    margin-bottom: 10px;
+}
+
+.featured {
+    border: 1px solid #a970ff;
+}
+
+.pricing-note {
+    color: #9693a2;
+    font-size: 13px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 750px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+      #enquiryForm {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: grid;
+    gap: 15px;
+}
+
+#enquiryForm input,
+#enquiryForm select,
+#enquiryForm textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #30283c;
+    border-radius: 8px;
+    background: #191820;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+#enquiryForm input:focus,
+#enquiryForm select:focus,
+#enquiryForm textarea:focus {
+    outline: 1px solid #a970ff;
+    border-color: #a970ff;
+}
+
+#enquiryForm textarea {
+    resize: vertical;
+}
+
+#enquiryForm button {
+    cursor: pointer;
+      }
+      header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 7%;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    color: #d8d5e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #a970ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 20px;
+  }
+      .floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #8b45ed;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(169, 112, 255, 0.35);
+    transition: transform 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-4px);
+                          }
+      .site-footer {
+    background: #08080c;
+    border-top: 1px solid #30283c;
+    padding: 40px 7% 20px;
+    text-align: center;
+}
+
+.site-footer h3 {
+    color: #a970ff;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.site-footer p {
+    color: #c0beca;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #d8d5e0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #a970ff;
+}
+
+.site-footer .copyright {
+    border-top: 1px solid #24212c;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 12px;
+  }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NEXORA DIGITAL</div>
+      <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Our Work</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="badge">WEB DESIGN • DIGITAL SOLUTIONS</div>
+
+            <h1>
+                Building Your<br>
+                <span>Future Online.</span>
+            </h1>
+
+            <p>
+                We create modern, mobile-friendly websites
+                that help businesses showcase their products,
+                connect with customers and grow online.
+            </p>
+
+            <div class="buttons">
+                <a href="#services" class="button primary">
+                    Explore Our Services
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Contact Us
+                </a>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2>What We Do</h2>
+
+            <p class="section-text">
+                Digital solutions designed around your business.
+            </p>
+
+            <div class="service-grid">
+
+                <div class="card">
+                    <h3>Business Websites</h3>
+                    <p>
+                        Professional websites that introduce
+                        your business and help customers find you.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Product Showcases</h3>
+                    <p>
+                        Display your products, prices and
+                        contact details in one convenient place.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Portfolio Websites</h3>
+                    <p>
+                        Showcase your skills, projects and
+                        services with a professional online presence.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+          <section class="pricing" id="pricing">
+
+    <h2>Simple, Affordable Pricing</h2>
+
+    <p class="section-text">
+        The right website for your next step.
+    </p>
+
+    <div class="pricing-grid">
+
+        <div class="price-card">
+            <h3>Starter</h3>
+
+            <p class="price">K500+</p>
+
+            <p>Ideal for individuals and small businesses.</p>
+
+            <ul>
+                <li>One-page website</li>
+                <li>Mobile-friendly design</li>
+                <li>Business contact details</li>
+                <li>WhatsApp contact button</li>
+            </ul>
+
+        </div>
+
+        <div class="price-card featured">
+            <h3>Business</h3>
+
+            <p class="price">K1,200+</p>
+
+            <p>For businesses ready to grow online.</p>
+
+            <ul>
+                <li>Up to four pages</li>
+                <li>Responsive layout</li>
+                <li>Services and product sections</li>
+                <li>WhatsApp contact integration</li>
+            </ul>
+
+        </div>
+
+        <div class="price-card">
+            <h3>Product Showcase</h3>
+
+            <p class="price">K1,500+</p>
+
+            <p>For businesses that want to display products.</p>
+
+            <ul>
+                <li>Product images and prices</li>
+                <li>Product catalogue layout</li>
+                <li>Mobile-friendly design</li>
+                <li>WhatsApp ordering links</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <p class="pricing-note">
+        Final prices depend on project requirements.
+        Domain registration, hosting and additional features
+        may cost extra.
+    </p>
+
+          </section>
+          <form id="enquiryForm">
+    <input
+        type="text"
+        id="clientName"
+        placeholder="Your name"
+        required
+    >
+
+    <input
+        type="email"
+        id="clientEmail"
+        placeholder="Your email (optional)"
+    >
+
+    <select id="service" required>
+        <option value="">Choose a service</option>
+        <option>Business Website</option>
+        <option>Product Showcase</option>
+        <option>Portfolio Website</option>
+        <option>Other</option>
+    </select>
+
+    <textarea
+        id="projectDetails"
+        placeholder="Tell me about your project"
+        rows="4"
+        required
+    ></textarea>
+
+    <button type="submit" class="button primary">
+        Send Enquiry on WhatsApp
+    </button>
+          </form>
+          <section class="portfolio" id="portfolio">
+    <h2>Our Work</h2>
+
+    <p class="section-text">
+        Every project is a step towards a better digital future.
+    </p>
+
+    <div class="portfolio-card">
+        <div class="portfolio-image">
+            FS
+        </div>
+
+        <h3>FuzeStore</h3>
+
+        <p>
+            A mobile-friendly product showcase featuring
+            product images, prices and customer contact options.
+        </p>
+
+        <a
+            href="https://josephmasauso123-source.github.io/Fuze-Store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button primary">
+            View Project
+        </a>
+    </div>
+          </section>
+            <h2>Have a Project in Mind?</h2>
+
+            <p>
+                Tell us what you need, and let's discuss
+                a website that fits your business.
+            </p>
+
+            <a href="https://wa.me/260770595774"
+               class="button primary">
+                Start Your Project
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+    <h3>NEXORA DIGITAL</h3>
+
+    <p>Building Your Future Online.</p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Our Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 Nexora Digital. All rights reserved.
+    </p>
+    </footer>
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("clientName").value.trim();
+    const email = document.getElementById("clientEmail").value.trim();
+    const service = document.getElementById("service").value;
+    const details = document.getElementById("projectDetails").value.trim();
+
+    const message =
+        "Hello Nexora Digital! I would like to enquire about your services.\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + (email || "Not provided") + "\n" +
+        "Service: " + service + "\n" +
+        "Project details: " + details;
+
+    const phone = "260770595774";
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+});
+</script>
+  <a
+    href="https://wa.me/260770595774"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Nexora Digital on WhatsApp"
+>
+    WhatsApp
+  </a>
+</body>
+</html>
